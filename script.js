@@ -1,4 +1,3 @@
-// প্রয়োজনীয় element নেওয়া
 var jobsContainer = document.getElementById("jobsContainer");
 
 var totalCountEl = document.getElementById("totalCount");
@@ -10,9 +9,6 @@ var rejectedBtn = document.getElementById("rejectedBtn");
 
 var interviewEmpty = document.getElementById("interviewEmpty");
 var rejectedEmpty = document.getElementById("rejectedEmpty");
-
-
-// কাউন্ট আপডেট ফাংশন
 function updateCounts() {
   var jobs = document.getElementsByClassName("job-card");
 
@@ -34,9 +30,6 @@ function updateCounts() {
   document.querySelector(".text-green-600").innerText = interviewCount;
   document.querySelector(".text-red-600").innerText = rejectedCount;
 }
-
-
-// ফিল্টার ফাংশন
 function filterJobs(status) {
   var jobs = document.getElementsByClassName("job-card");
   var visible = 0;
@@ -61,9 +54,6 @@ function filterJobs(status) {
     rejectedEmpty.style.display = "block";
   }
 }
-
-
-// প্রতিটি job card সেটআপ
 var cards = jobsContainer.getElementsByClassName("bg-white");
 
 for (var i = 0; i < cards.length; i++) {
@@ -107,9 +97,6 @@ for (var i = 0; i < cards.length; i++) {
   updateCounts();
 };
 }
-
-
-// ফিল্টার বাটন ইভেন্ট
 allBtn.onclick = function () {
   filterJobs("all");
 };
@@ -121,7 +108,4 @@ interviewBtn.onclick = function () {
 rejectedBtn.onclick = function () {
   filterJobs("rejected");
 };
-
-
-// প্রথমবার কাউন্ট দেখানো
 updateCounts();
